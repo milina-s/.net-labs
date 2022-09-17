@@ -49,6 +49,50 @@ namespace lab1
                 }
             }
 
+            // 3
+            Console.WriteLine("\n3. Загальна кількість машин кожного бренду, що були взяті у прокат:");
+
+            var q3 = from ch in checks
+                     join a in autos on ch.AutoId equals a.Id
+                     group ch by a.Brand;
+
+            foreach (var group in q3)
+            {
+                int sum = 0;
+                foreach (var el in group)
+                {
+                    sum += 1;
+                }
+                Console.WriteLine($"{group.Key}: {sum} машин");
+            }
+
+            // 4
+            Console.Write("\n4. Загальна сума прокату всіх машин:");
+
+            var q4 = checks
+                .Join(autos,
+                ch => ch.AutoId,
+                a => a.Id,
+                (ch, a) => new
+                {
+                    term = (ch.EndRent - ch.BeginRent).TotalDays,
+                    costPerDay = a.CostPerDay
+                }).
+                Aggregate(0d, (total, el) => total + el.costPerDay * el.term);
+
+            Console.WriteLine(q4);
+
+            // 5
+            Console.WriteLine($"\n5. Середня, найбільша та найменша вартість прокату на день:");
+
+            var q5 = from a in autos
+                     select a.CostPerDay;
+
+            Console.WriteLine($"Середня {q5.Average()}\nНайбільша {q5.Max()}\nНайменша {q5.Min()}");
+
+            // 6
+            Console.WriteLine($"\n6. Машини з депозитом від 500 до 1000:\n");
+
 
         }
 
