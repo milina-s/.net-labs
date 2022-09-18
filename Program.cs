@@ -93,6 +93,35 @@ namespace lab1
             // 6
             Console.WriteLine($"\n6. Машини з депозитом від 500 до 1000:\n");
 
+            // 6
+            Console.WriteLine($"\n6. Машини з депозитом від 500 до 1000:\n");
+
+            var q6 = autos.
+                Where(x => (x.Deposit > 500 && x.Deposit < 1000));
+
+            foreach (var el in q6)
+            {
+                Console.WriteLine($"{el.Brand} {el.Model} - {el.Deposit}$");
+            }
+
+            // 7
+            Console.WriteLine("\n7. Машини, що були в аренді у період з 2022.02.10 по 2022.02.20:");
+
+            var q7 = checks
+                .Join(autos,
+                ch => ch.AutoId,
+                a => a.Id,
+                (ch, a) => new
+                {
+                    ch.EndRent,
+                    ch.BeginRent,
+                    auto = a.Brand + " " + a.Model,
+                })
+                .Where(res => res.BeginRent <= new DateTime(2022, 02, 10) && res.EndRent >= new DateTime(2022, 02, 20));
+
+            foreach (var el in q7)
+                Console.WriteLine(el.auto + ": " + el.BeginRent.ToShortDateString() + "-" +
+                    el.EndRent.ToShortDateString());
 
         }
 
