@@ -120,6 +120,13 @@ namespace lab1
                 Console.WriteLine(el.auto + ": " + el.BeginRent.ToShortDateString() + "-" +
                     el.EndRent.ToShortDateString());
 
+            // 8
+            Console.Write("\n8. Загальна сума депозитів до всіх машин: ");
+
+            var q8 = autos.Sum(el => el.Deposit);
+            Console.WriteLine($"{q8}$");
+
+
         }
 
     }
