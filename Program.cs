@@ -126,6 +126,22 @@ namespace lab1
             var q8 = autos.Sum(el => el.Deposit);
             Console.WriteLine($"{q8}$");
 
+            // 9
+            Console.WriteLine("\n9. Додавання та сортування прокату:");
+
+            var newChecks = new List<Check>()
+            {
+                new Check (7, 5, new DateTime(2022, 1, 10), new DateTime(2022, 1, 30)),
+                new Check (2, 1, new DateTime(2022, 4, 2), new DateTime(2022, 4, 15)),
+            };
+
+            var q9 = checks.Select(el => el).Concat(newChecks.Select(el => el)).OrderByDescending(el => el.BeginRent);
+
+            foreach (var el in q9)
+            {
+                Console.WriteLine(el);
+            }
+
 
         }
 
