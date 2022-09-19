@@ -93,9 +93,6 @@ namespace lab1
             // 6
             Console.WriteLine($"\n6. Машини з депозитом від 500 до 1000:\n");
 
-            // 6
-            Console.WriteLine($"\n6. Машини з депозитом від 500 до 1000:\n");
-
             var q6 = autos.
                 Where(x => (x.Deposit > 500 && x.Deposit < 1000));
 
