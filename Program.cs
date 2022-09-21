@@ -142,7 +142,27 @@ namespace lab1
                 Console.WriteLine(el);
             }
 
+            // 10
+            Console.Write($"\n10. Чи є хоча б одна машина 2017 року? ");
+            bool q10 = autos.
+                Any(x => x.Year == 2017);
 
+            Console.WriteLine(q10 ? "Так" : "Ні");
+
+            // 11
+            Console.Write($"\n11. Чи всі клієнти ввели номер телефону? ");
+            bool q11 = clients.
+                All(x => x.Phone != null);
+
+            Console.WriteLine(q11 ? "Так" : "Ні");
+
+            // 12
+            Console.WriteLine($"\n12. Нaйбільший депозит за машину: ");
+            var q12 = autos.
+                OrderBy(x => x.Deposit).
+                LastOrDefault();
+
+            Console.WriteLine(q12);
         }
 
     }
