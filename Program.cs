@@ -163,6 +163,45 @@ namespace lab1
                 LastOrDefault();
 
             Console.WriteLine(q12);
+
+            // 13
+            Console.WriteLine($"\n13. Три машини, починаючи з другої: ");
+            var result = (from a in autos select a).Skip(1).Take(3).OrderBy(x => x.Brand + " " + x.Model);
+
+            foreach (var el in result)
+                Console.WriteLine(el);
+
+            // 14
+            Console.WriteLine("\n14. Машини відсортовані за вартістю прокату:");
+
+            var q14 = autos.
+                Take(autos.Count() / 2).
+                OrderBy(x => x.CostPerDay).
+                Concat(autos.Skip(autos.Count() / 2).
+                OrderByDescending(x => x.CostPerDay));
+
+            foreach (var el in q14)
+            {
+                Console.WriteLine(el);
+            }
+
+            // 15
+            Console.WriteLine("\n15. Пари Автомобіль-Клієнт");
+            var q15 = from ch in checks
+                      join a in autos on ch.AutoId equals a.Id
+                      join cl in clients on ch.ClientId equals cl.Id
+                      orderby cl.Phone descending
+                      select new
+                      {
+                          auto = a.Brand + " " + a.Model,
+                          client = cl.Name + " " + cl.Lastname,
+                          phone = cl.Phone
+                      };
+
+            foreach (var el in q15)
+            {
+                Console.WriteLine($"Client: {el.client}, Phone: {el.phone}, Auto: {el.auto}");
+            }
         }
 
     }
