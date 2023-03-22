@@ -1,5 +1,5 @@
 ﻿Abstract Factory
-![view game](https://raw.githubusercontent.com/milina-s/.net-labs/lab3-creational-patterns/uml.png)
+![alt text](https://github.com/milina-s/.net-labs/blob/main/lab3-creational-patterns/uml.png?raw=true)
 
 Реалізувати задачу роботи з касовими апаратами, де апарати можуть бути різних виробників. Кожен касовий апарат має унікальний номер, колекцію товарів та можливість додати товар, зберегти та роздрукувати чек.
 
