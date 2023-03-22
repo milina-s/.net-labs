@@ -1,5 +1,6 @@
-﻿Flyweight
-![alt text](https://github.com/milina-s/.net-labs/blob/main/lab3-creational-patterns/uml.png?raw=true)
+# Structural Patterns
+### Pattern: Flyweight
+![alt text](https://github.com/milina-s/.net-labs/blob/main/lab4-structural-patterns/uml.png?raw=true)
 
 Реалізувати задачу роботи з касовими апаратами, де апарати можуть бути різних виробників. Кожен касовий апарат має унікальний номер, колекцію товарів та можливість додати товар, зберегти та роздрукувати чек. 
 
