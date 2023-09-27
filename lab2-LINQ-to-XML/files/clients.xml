@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clients>
+  <client>
+    <id>1</id>
+    <name>Іван</name>
+    <secondname>Іванович</secondname>
+    <lastname>Іваненко</lastname>
+    <address>Київ, пров. Волкова, 64</address>
+    <phone>066-842-98-76</phone>
+  </client>
+  <client>
+    <id>2</id>
+    <name>Анна</name>
+    <secondname>Ігорівна</secondname>
+    <lastname>Шевченко</lastname>
+    <address>Вінниця, вул. Леніна, 71</address>
+    <phone>050-066-99-14</phone>
+  </client>
+  <client>
+    <id>3</id>
+    <name>Антон</name>
+    <secondname>Андрійович</secondname>
+    <lastname>Кравченко</lastname>
+    <address>Дніпро, вулю Шевченка, 21</address>
+    <phone>050-205-78-31</phone>
+  </client>
+  <client>
+    <id>4</id>
+    <name>Тетяна</name>
+    <secondname>Тарасовна</secondname>
+    <lastname>Крамарчук</lastname>
+    <address>Київ, пров. Лесі Українки, 10</address>
+    <phone>099-967-51-71</phone>
+  </client>
+  <client>
+    <id>5</id>
+    <name>Павло</name>
+    <secondname>Петрович</secondname>
+    <lastname>Захарчук</lastname>
+    <address>Київ, пров. Гагаріна, 40</address>
+    <phone>050-796-25-34</phone>
+  </client>
+</clients>
